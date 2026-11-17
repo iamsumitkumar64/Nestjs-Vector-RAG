@@ -1,4 +1,4 @@
-name: "setup-backend"
+name: "RAG_POC-backend"
 
 services:
   database:

@@ -7,6 +7,7 @@ import { AppController } from './app.controller.js';
 import { AppService } from './app.service.js';
 import { dataSource } from './infrastructure/database/config/orm-config.js';
 import { UploadModule } from './feature/upload/upload.module.js';
+import { DocumentModule } from './feature/document/document.module.js';
 import { createTransactionalDataSourceService } from './infrastructure/service/typeorm-transactional/typeorm-transactional.service.js';
 import { CloudinaryService } from './infrastructure/service/cloudinary/cloudinary.service.js';
 
@@ -42,6 +43,7 @@ export const { ObserveModule, ObserveInstrument } = createObserveModule();
 
     // Features
     UploadModule,
+    DocumentModule,
   ],
   controllers: [AppController],
   providers: [

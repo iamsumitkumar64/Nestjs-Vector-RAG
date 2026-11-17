@@ -2,7 +2,7 @@
     docker container prune -f && docker volume prune -f && docker builder prune -f --all && docker buildx history rm --all && docker system prune -f
 
 
--> Setup Deps,env in both folder
+-> RAG_POC Deps,env in both folder
     (cp backend/.env.example backend/.env) && (cp frontend/.env.example frontend/.env) && (cd backend && npm ci) && (cd frontend && npm ci)
 
 

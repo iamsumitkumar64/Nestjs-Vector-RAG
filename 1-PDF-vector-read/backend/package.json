@@ -1,7 +1,7 @@
 {
   "name": "backend",
   "version": "0.0.1",
-  "description": "RAG Backend - PDF Upload & Vector Search Setup",
+  "description": "RAG Backend - PDF Upload & Vector Search RAG_POC",
   "author": "",
   "private": true,
   "license": "UNLICENSED",
@@ -26,16 +26,19 @@
     "migration:revert": "typeorm migration:revert -d dist/infrastructure/database/config/orm-config.js"
   },
   "dependencies": {
+    "@google/genai": "^3.4.0",
     "@nestjs/common": "^12.1.2",
     "@nestjs/config": "^12.0.1",
     "@nestjs/core": "^12.1.2",
     "@nestjs/observe": "^0.3.26",
     "@nestjs/platform-express": "^12.1.2",
     "@nestjs/typeorm": "^12.0.2",
+    "@types/pdf-parse": "^1.1.5",
     "class-transformer": "^0.5.1",
     "class-validator": "^0.15.1",
     "cloudinary": "^2.11.0",
     "cookie-parser": "^1.4.7",
+    "pdf-parse": "^2.4.5",
     "pg": "^8.23.1",
     "pgvector": "^0.2.0",
     "reflect-metadata": "^0.2.2",

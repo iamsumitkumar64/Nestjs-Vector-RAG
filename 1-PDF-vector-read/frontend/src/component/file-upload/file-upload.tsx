@@ -7,7 +7,7 @@ import {
     CircularProgress,
     Typography,
     Paper,
-    LinearProgress
+    LinearProgress,
 } from "@mui/material";
 import CloudUploadIcon from "@mui/icons-material/CloudUpload";
 import PictureAsPdfIcon from "@mui/icons-material/PictureAsPdf";
@@ -47,14 +47,14 @@ export default function FileUpload({ onSuccess }: FileUploadProps) {
         try {
             const url = await dispatch(uploadFile(selectedFile)).unwrap();
             setUploadedUrl(url);
-            onSuccess?.(url);
+            onSuccess?.(url, selectedFile.name);
         } catch (err: unknown) {
             const message =
                 err instanceof Error
                     ? err.message
                     : typeof err === "string"
-                    ? err
-                    : "Upload failed. Check backend and Cloudinary credentials.";
+                        ? err
+                        : "Upload failed. Check backend and Cloudinary credentials.";
             setError(message);
         } finally {
             setLoading(false);
@@ -64,11 +64,11 @@ export default function FileUpload({ onSuccess }: FileUploadProps) {
     return (
         <Paper elevation={2} className={styles.container}>
             <Box className={styles.dropZone}>
-                <PictureAsPdfIcon sx={{ fontSize: 48, color: "#d32f2f" }} />
+                <PictureAsPdfIcon className={styles.pdfIcon} />
                 <Typography variant="h6" className={styles.heading}>
                     Select PDF Document
                 </Typography>
-                <Typography variant="body2" color="textSecondary">
+                <Typography variant="body2" className={styles.subheading}>
                     Upload a PDF to store on Cloudinary
                 </Typography>
 
@@ -91,7 +91,7 @@ export default function FileUpload({ onSuccess }: FileUploadProps) {
 
             {selectedFile && (
                 <Box className={styles.fileDetails}>
-                    <Typography variant="body2">
+                    <Typography variant="body2" className={styles.fileNameText}>
                         <strong>Selected:</strong> {selectedFile.name} ({(selectedFile.size / 1024).toFixed(1)} KB)
                     </Typography>
                     <Button
@@ -112,7 +112,7 @@ export default function FileUpload({ onSuccess }: FileUploadProps) {
             {uploadedUrl && (
                 <Box className={styles.successBox}>
                     <CheckCircleIcon color="success" />
-                    <Box>
+                    <Box sx={{ width: "100%" }}>
                         <Typography variant="body2" className={styles.successTitle}>
                             PDF Uploaded Successfully!
                         </Typography>

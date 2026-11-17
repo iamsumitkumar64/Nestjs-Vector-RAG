@@ -1,3 +1,3 @@
 export interface FileUploadProps {
-    onSuccess?: (url: string) => void;
+    onSuccess?: (url: string, fileName: string) => void;
 }

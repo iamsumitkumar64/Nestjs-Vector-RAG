@@ -5,4 +5,5 @@ export interface SearchCompProps {
     placeholder?: string;
     debounceDelay?: number;
     schema?: ZodType<string>;
+    disabled?: boolean;
 }

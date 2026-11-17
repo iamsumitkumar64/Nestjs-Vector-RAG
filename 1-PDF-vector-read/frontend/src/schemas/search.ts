@@ -7,11 +7,8 @@ export const searchSchema = z
     .refine((val) => val === "" || val.length >= 2, {
         message: "Search must be at least 2 characters",
     })
-    .refine((val) => val.length <= 50, {
-        message: "Search cannot exceed 50 characters",
-    })
-    .refine((val) => !/[<>{}[\]\\]/.test(val), {
-        message: "Special characters are not allowed",
+    .refine((val) => val.length <= 500, {
+        message: "Search query cannot exceed 500 characters",
     });
 
 export type SearchSchemaType = z.infer<typeof searchSchema>;

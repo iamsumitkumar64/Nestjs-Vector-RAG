@@ -1,4 +1,4 @@
-name: "setup-frontend"
+name: "RAG_POC-frontend"
 
 services:
   frontend:
@@ -19,9 +19,9 @@ services:
       - "3000:3000"
     env_file: ./.env
     networks:
-      - setup_network
+      - RAG_POC_network
 
 networks:
-  setup_network: # backend should start first to create this network
-    name: setup_network
+  RAG_POC_network: # backend should start first to create this network
+    name: RAG_POC_network
     external: true

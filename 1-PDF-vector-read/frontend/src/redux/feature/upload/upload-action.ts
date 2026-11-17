@@ -12,7 +12,7 @@ export const uploadFile = createAsyncThunk(
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 credentials: "include",
-                body: JSON.stringify({ folder: "setup" }),
+                body: JSON.stringify({ folder: "RAG_POC" }),
             })
             const signData = await signRes.json()
             if (!signRes.ok) throw new Error(signData.message)

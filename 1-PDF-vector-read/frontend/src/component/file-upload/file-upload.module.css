@@ -1,9 +1,11 @@
 .container {
-    padding: 24px;
+    padding: 28px;
     border-radius: 12px;
     background-color: #ffffff;
-    max-width: 600px;
+    max-width: 640px;
     margin: 0 auto;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .dropZone {
@@ -12,26 +14,47 @@
     align-items: center;
     justify-content: center;
     border: 2px dashed #b0bec5;
-    border-radius: 8px;
-    padding: 32px 16px;
+    border-radius: 10px;
+    padding: 36px 20px;
     background-color: #fafafa;
     text-align: center;
     gap: 12px;
+    transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.dropZone:hover {
+    border-color: #1976d2;
+    background-color: #f0f7ff;
+}
+
+.pdfIcon {
+    font-size: 52px !important;
+    color: #d32f2f;
 }
 
 .heading {
-    font-weight: 600;
+    font-weight: 700 !important;
+    color: #1e293b;
+    font-size: 1.25rem !important;
+}
+
+.subheading {
+    color: #64748b;
+    font-size: 0.925rem;
 }
 
 .chooseButton {
-    margin-top: 8px;
-    text-transform: none;
+    margin-top: 8px !important;
+    text-transform: none !important;
+    padding: 8px 24px !important;
+    font-weight: 600 !important;
+    border-radius: 8px !important;
 }
 
 .fileDetails {
-    margin-top: 16px;
-    padding: 12px 16px;
-    background-color: #f5f5f5;
+    margin-top: 20px;
+    padding: 14px 18px;
+    background-color: #f1f5f9;
     border-radius: 8px;
     display: flex;
     justify-content: space-between;
@@ -40,18 +63,28 @@
     flex-wrap: wrap;
 }
 
+.fileNameText {
+    font-size: 0.925rem !important;
+    word-break: break-all;
+    flex: 1 1 auto;
+}
+
 .uploadButton {
-    text-transform: none;
+    text-transform: none !important;
+    font-weight: 600 !important;
+    padding: 8px 20px !important;
+    border-radius: 8px !important;
+    white-space: nowrap;
 }
 
 .progress {
-    margin-top: 12px;
+    margin-top: 14px;
     border-radius: 4px;
 }
 
 .successBox {
-    margin-top: 16px;
-    padding: 12px 16px;
+    margin-top: 18px;
+    padding: 14px 18px;
     background-color: #e8f5e9;
     border: 1px solid #a5d6a7;
     border-radius: 8px;
@@ -61,7 +94,7 @@
 }
 
 .successTitle {
-    font-weight: 600;
+    font-weight: 600 !important;
     color: #2e7d32;
 }
 
@@ -73,8 +106,8 @@
 }
 
 .errorBox {
-    margin-top: 16px;
-    padding: 12px 16px;
+    margin-top: 18px;
+    padding: 14px 18px;
     background-color: #ffebee;
     border: 1px solid #ffcdd2;
     border-radius: 8px;
@@ -85,4 +118,83 @@
 
 .errorText {
     color: #c62828;
+    word-break: break-word;
+}
+
+/* ========================================================== */
+/* MEDIA QUERIES FOR SCREEN SIZES                             */
+/* ========================================================== */
+
+/* Tablets (max-width: 768px) */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    .dropZone {
+        padding: 28px 16px;
+    }
+}
+
+/* Mobile Devices (max-width: 600px) */
+@media (max-width: 600px) {
+    .container {
+        padding: 16px;
+        border-radius: 8px;
+    }
+
+    .dropZone {
+        padding: 24px 12px;
+        gap: 8px;
+    }
+
+    .pdfIcon {
+        font-size: 40px !important;
+    }
+
+    .heading {
+        font-size: 1.1rem !important;
+    }
+
+    .subheading {
+        font-size: 0.825rem;
+    }
+
+    .chooseButton {
+        width: 100%;
+    }
+
+    .fileDetails {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 12px;
+        gap: 10px;
+    }
+
+    .uploadButton {
+        width: 100%;
+    }
+
+    .successBox,
+    .errorBox {
+        padding: 12px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+}
+
+/* Small screens / Foldables (max-width: 380px) */
+@media (max-width: 380px) {
+    .container {
+        padding: 12px;
+    }
+
+    .dropZone {
+        padding: 16px 8px;
+    }
+
+    .heading {
+        font-size: 1rem !important;
+    }
 }

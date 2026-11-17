@@ -1,4 +1,4 @@
-name: "setup-frontend"
+name: "RAG_POC-frontend"
 
 services:
   frontend:

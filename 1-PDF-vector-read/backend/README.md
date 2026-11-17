@@ -25,7 +25,7 @@
 
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
-## Project setup
+## Project RAG_POC
 
 ```bash
 $ npm install
@@ -74,7 +74,7 @@ With Mau, you can deploy your application in just a few clicks, allowing you to 
 
 In production applications, observability is essential for understanding how your system behaves, detecting issues early, and maintaining reliable performance.
 
-[NestJS Observe](https://observe.nestjs.com) automatically instruments your NestJS application, giving you deep visibility into your system with minimal setup:
+[NestJS Observe](https://observe.nestjs.com) automatically instruments your NestJS application, giving you deep visibility into your system with minimal RAG_POC:
 
 - **Distributed tracing:** Follow requests across services and understand how they flow through your system.
 - **Waterfall analysis:** Visualize request execution and identify slow operations, bottlenecks, and unexpected delays.

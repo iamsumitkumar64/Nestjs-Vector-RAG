@@ -11,7 +11,7 @@ export class CreateSignedUrlHandler {
     ) { }
 
     async handler(dto: CreateSignedUrlDto) {
-        const folder = dto?.folder || this.configService.get<string>('CLOUDINARY_FOLDER') || 'setup';
+        const folder = dto?.folder || this.configService.get<string>('CLOUDINARY_FOLDER') || 'RAG_POC';
         const signatureData = this.cloudinaryService.createUploadSignature(folder);
 
         return {

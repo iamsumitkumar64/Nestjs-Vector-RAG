@@ -1,4 +1,4 @@
-name: "setup-backend"
+name: "RAG_POC-backend"
 
 services:
   pgadmin:
@@ -12,7 +12,7 @@ services:
     volumes:
       - backend_pgadmin_data:/var/lib/pgadmin
     networks:
-      - setup_network
+      - RAG_POC_network
 
   database:
     image: pgvector/pgvector:pg16
@@ -27,7 +27,7 @@ services:
     volumes:
       - backend_postgres_data:/var/lib/postgresql/data
     networks:
-      - setup_network
+      - RAG_POC_network
 
   backend:
     build:
@@ -40,13 +40,13 @@ services:
       database:
         condition: service_healthy
     networks:
-      - setup_network
+      - RAG_POC_network
 
 volumes:
   backend_postgres_data: {}
   backend_pgadmin_data: {}
 
 networks:
-  setup_network:
-    name: setup_network
+  RAG_POC_network:
+    name: RAG_POC_network
     driver: bridge
